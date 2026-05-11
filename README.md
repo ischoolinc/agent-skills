@@ -47,7 +47,29 @@ iSchool 內部 Agent Skills 合集。收錄 1Campus 平台等產品的 API、SDK
 
 ## 安裝方式
 
-### 方式一：使用 `skills` CLI（推薦）
+### 方式一：腦力外包安裝法（推薦）🧠
+
+既然你已經在用 AI 工具，何不讓 AI 自己搞定？這招對所有 AI 工具通用、零學習成本：
+
+1. 把整個 repo clone 下來：
+
+   ```bash
+   git clone https://github.com/ischoolinc/agent-skills.git
+   ```
+
+2. 用你的 AI 工具（Claude Code、Cursor、Codex...）開啟 clone 下來的目錄，然後丟一句：
+
+   > 「幫我把這個 repo 裡的 skills 裝到我這個工具的 skill 目錄」
+
+   或更具體一點：
+
+   > 「請讀 README.md 與 skills/ 目錄結構，把 1campus-storage-api 安裝到本機，安裝完告訴我怎麼觸發」
+
+AI 會自己讀 `README.md`、找出對應路徑、選擇 `cp` 或 `symlink`、甚至幫你重啟工具或測試觸發。比你自己看文件還快 ✨
+
+> 適合：不熟悉自己工具設定、想偷懶、或工具版本與本 README 範例不一致時。
+
+### 方式二：使用 `skills` CLI
 
 [`skills` CLI](https://www.npmjs.com/package/skills) 是 Vercel Labs 出的通用 skill 管理工具，支援多種 AI agent（Claude Code、Cursor 等）。
 
@@ -74,9 +96,9 @@ npx skills list
 npx skills update
 ```
 
-### 方式二：手動安裝（不使用 CLI）
+### 方式三：手動安裝
 
-如果不想用 `skills` CLI，也可以直接 clone 後複製到對應 AI 工具的 skills 目錄。以 Claude Code 為例：
+如果不想用 CLI、也不想讓 AI 幫忙，可以直接 clone 後複製到對應 AI 工具的 skills 目錄。以 Claude Code 為例：
 
 ```bash
 git clone https://github.com/ischoolinc/agent-skills.git
