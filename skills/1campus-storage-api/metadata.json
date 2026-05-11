@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "organization": "iSchool",
+  "product": "1Campus",
+  "license": "CC-BY-ND-4.0",
+  "abstract": "1Campus Storage Service 對外 API 參考。包含 OAuth Client Credentials 認證、Upload Token 生命週期管理、檔案上傳/下載/換檔/刪除流程，以及 GCS signed URL 與快取行為說明。",
+  "references": [
+    "https://storage.1campus.net",
+    "https://auth.ischool.com.tw/1campus/manage/"
+  ]
+}
