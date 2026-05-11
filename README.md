@@ -18,6 +18,16 @@ iSchool 內部 Agent Skills 合集。收錄 1Campus 平台等產品的 API、SDK
 - 處理檔案換檔（PUT）、刪除（DELETE）
 - 排查 GCS signed URL 快取行為
 
+### 1campus-dev
+
+1Campus 平台 API 整合開發助手。涵蓋身分認證（Identity Code / OAuth SSO）、班群資料（Jasmine）、訊息推播（Dandelion）、課表（Schedule）、點名（Rollcall）等 11 個 API 模組的串接指引，附測試帳號與 sandbox credentials。
+
+**Use when:**
+- 串接 1Campus 校園 API（取得學校、班級、學生、課表、推播通知等）
+- 整合 1Campus 身分認證（Identity Code 或 OAuth SSO）
+- 申請 Scope 權限、評估資料機敏程度
+- 服務上架到 1Campus 平台、規劃整合架構
+
 ### 1campus-gpt-doc
 
 1Campus GPT V4 Client API 第三方開發者文件。涵蓋單階段／二階段 API、SSE 串流事件、Client Function Call、Context 模板、Skirk 嵌入整合等完整 Client 端使用方式。
@@ -110,6 +120,32 @@ ln -s ~/src/agent-skills/skills/1campus-storage-api ~/.claude/skills/1campus-sto
 3. （選用）新增 `metadata.json`：含 abstract、references 等補充資料
 4. 更新本 README 的 Skill 清單
 5. 開 PR 並請 reviewer 確認
+
+### 從內部 Skill 複製過來時的檢查清單
+
+許多 skill 原本是公司內部維護的版本（例如同名 repo 或本機 `~/.claude/skills/` 下的版本），複製到本合集前**必須**逐項檢查並清掃以下內容，避免內部資訊外流：
+
+#### 🚨 一定要移除
+
+- [ ] **內部 Skill 名稱引用**：如 `gpt-v4-arch`、`gpt-thread-inspector`、`gpt-knowledge-pack`、`gpt-schema` 等只有公司內部能用的 skill 名稱
+- [ ] **私有 repo 連結**：指向 `ischoolinc/` 下 private repo 的 URL（除非該 repo 已公開）
+- [ ] **內部資料庫 schema / 表名 / 欄位**：除非該結構已對外公開
+- [ ] **正式環境 Credential**：production 環境的 API key、token、密碼、OAuth secret 絕對不能出現（即使是「只是範例」）。dev/sandbox 環境的測試 credential 若是平台**刻意公開供開發者試用**（如沙箱用 OAuth client、測試帳號密碼），可保留並明確標註為「測試用」
+- [ ] **內部 IP、VPN 路徑、私有網址**：如 `10.x.x.x`、`*.internal`、未公開的服務 URL
+- [ ] **本機路徑**：`/Users/xxx/...`、`~/Downloads/...` 這類個人開發機路徑
+- [ ] **員工姓名、私密 email**：除非該人員同意公開掛名
+
+#### 🤔 需要評估
+
+- [ ] **內部工具指令**：只有公司同仁能用的 CLI 指令，要不要保留？若 skill 主要給外部用戶，這類指令應移除或改寫
+- [ ] **內部規範引用**：如「依照 CLAUDE.md 規則」、「按照公司開發習慣」這類只有內部人員看得懂的話
+- [ ] **過於詳細的內部架構**：若 skill 是 API 文件型，避免暴露後端實作細節（例如哪個 microservice 處理哪個請求）
+
+#### ✅ 應保留
+
+- ✅ API endpoint、參數、錯誤碼（這是公開資訊）
+- ✅ curl 範例（用 `{YOUR_TOKEN}` 占位符代替實際 token）
+- ✅ Skill 主體內容（除非觸及上述地雷）
 
 ### Skill 撰寫原則
 

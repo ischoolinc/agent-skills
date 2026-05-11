@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "organization": "iSchool",
+  "product": "1Campus",
+  "license": "CC-BY-ND-4.0",
+  "abstract": "1Campus 平台 API 整合開發助手。涵蓋 Identity Code / OAuth SSO 認證、Jasmine 班群資料、Dandelion 訊息推播、Schedule 課表、Rollcall 點名等校園 API 完整串接指引，附測試帳號與 sandbox credentials。",
+  "references": [
+    "https://docs.1campus.net",
+    "https://devapi.1campus.net/doc/",
+    "https://auth.ischool.com.tw/1campus/manage/"
+  ]
+}
