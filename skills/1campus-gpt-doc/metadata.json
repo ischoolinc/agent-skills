@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "organization": "iSchool",
+  "product": "1Campus GPT",
+  "license": "CC-BY-ND-4.0",
+  "abstract": "1Campus GPT V4 Client API 第三方開發者文件。涵蓋單階段／二階段 API、SSE 事件、Client Function Call、Context 模板、Skirk 嵌入整合等完整 Client 端使用方式。",
+  "references": [
+    "https://gpt.1campus.net"
+  ]
+}

@@ -18,6 +18,18 @@ iSchool 內部 Agent Skills 合集。收錄 1Campus 平台等產品的 API、SDK
 - 處理檔案換檔（PUT）、刪除（DELETE）
 - 排查 GCS signed URL 快取行為
 
+### 1campus-gpt-doc
+
+1Campus GPT V4 Client API 第三方開發者文件。涵蓋單階段／二階段 API、SSE 串流事件、Client Function Call、Context 模板、Skirk 嵌入整合等完整 Client 端使用方式。
+
+**Use when:**
+- 串接 1Campus GPT V4 API（單階段或二階段）
+- 實作 SSE 事件處理（text/tool/reasoning/search 等）
+- 開發 Client-side Function Call（AI 控制前端 UI）
+- 處理 Context 模板與動態變數注入
+- 嵌入 Skirk AI 助理到自家應用（iframe、入口 URL、LINE Bot）
+- 設定 Skirk 認證模式（anonymous / identity_code / passthrough / code_exchange）
+
 ---
 
 ## 安裝方式
