@@ -1,6 +1,6 @@
 ---
 name: 1campus-dev
-description: 1Campus 平台 API 整合開發助手。協助開發者串接身分認證、班群資料、訊息推播等校園 API。當開發者提到 1Campus、校園 API、班級學生資料、推播通知等關鍵字時使用。
+description: 1Campus 平台 API 整合開發助手。協助開發者串接身分認證、班群資料、課表、點名等校園 API，**特別是 Dandelion 訊息推播 API**（發送通知到 1Campus Next APP、支援個人化關鍵字替換、批次推播給班級學生家長）。當開發者提到 1Campus、校園 API、推播、通知、班級學生資料、Dandelion 等關鍵字時使用。
 license: CC-BY-ND-4.0
 metadata:
   author: 1campus

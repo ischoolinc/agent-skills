@@ -20,10 +20,13 @@ iSchool 內部 Agent Skills 合集。收錄 1Campus 平台等產品的 API、SDK
 
 ### 1campus-dev
 
-1Campus 平台 API 整合開發助手。涵蓋身分認證（Identity Code / OAuth SSO）、班群資料（Jasmine）、訊息推播（Dandelion）、課表（Schedule）、點名（Rollcall）等 11 個 API 模組的串接指引，附測試帳號與 sandbox credentials。
+1Campus 平台 API 整合開發助手。涵蓋身分認證（Identity Code / OAuth SSO）、班群資料（Jasmine）、課表（Schedule）、點名（Rollcall）等 11 個 API 模組的串接指引，附測試帳號與 sandbox credentials。
+
+**⭐ 重點功能：訊息推播（Dandelion）** — 透過 API 即可發送通知到 1Campus Next APP，支援針對學生／家長／教師、整班／整校的批次推播，並提供 `${學生姓名}`、`${家長稱謂}` 等個人化關鍵字自動替換，是教育服務最常用的整合功能。
 
 **Use when:**
-- 串接 1Campus 校園 API（取得學校、班級、學生、課表、推播通知等）
+- 發送推播通知到 1Campus Next APP（作業提醒、活動通知、緊急公告等）
+- 串接 1Campus 校園 API（取得學校、班級、學生、課表等）
 - 整合 1Campus 身分認證（Identity Code 或 OAuth SSO）
 - 申請 Scope 權限、評估資料機敏程度
 - 服務上架到 1Campus 平台、規劃整合架構
