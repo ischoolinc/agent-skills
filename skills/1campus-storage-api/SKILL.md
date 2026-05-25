@@ -104,7 +104,14 @@ Storage API 使用兩層 token：
 | `dsns` | string \| null | 否 | null | 目標學校 DSNS，null 表示存放到 client 自身空間 |
 | `remaining_uploads` | number | 否 | 100 | 允許上傳的檔案數量上限 |
 | `max_size` | number | 否 | 5242880 (5MB) | 單檔大小上限（bytes） |
-| `expiry_hours` | number | 否 | 168 (7天) | Token 及檔案的過期時間（小時） |
+| `expiry_hours` | number | 否 | 見下方規則 | 上傳檔案的過期時間（小時） |
+
+> ⚠️ **預設值規則（重要，與直覺不同）**
+>
+> - **只有 request body 是完全空物件 `{}`** 時，server 才會套用整組預設值（含 `expiry_hours: 168`）
+> - body 帶任一欄位（例如 `{"dsns":"xxx"}`）但**省略 `expiry_hours`** → 視為未設定 → **上傳的檔案永不過期**（`valid_until = NULL`）
+> - `expiry_hours: 0` 或其他 falsy 值 → 同樣是**永不過期**
+> - **`upload_token` 本身的有效期（回應中的 `valid_until`）永遠是固定 24 小時**，由 DB 預設值決定，**不受 `expiry_hours` 影響**。`expiry_hours` 只控制「上傳檔案的存活時間」
 
 **注意**: 若指定 `dsns`，系統會自動檢查該學校是否授權此應用使用儲存服務。若學校不存在於系統中，會自動從 1Campus 平台同步。
 
